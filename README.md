@@ -115,12 +115,12 @@ Nos deberá de aparecer un mensaje tipo “Deploy complete!” y dentro del text
 
 Ahora vamos Dialogflow y seleccionamos la sección de “Fulfillment” en el menú del lado izquierdo. Ahora seleccionamos Webhook ENABLED y pegamos el URL de la función en el espacio URL y guardamos los cambios.
 
-[Imagen del Fulfillment de Dialogflow]()
+![Imagen del Fulfillment de Dialogflow]()
 
 ### Prueba
 
 El siguiente paso es ingresar a Dialogflow y activar el Webhook call para los intents que se crean por Default. 
 
-[Imagen de la prueba]()
+![Imagen de la prueba]()
 
 Una vez activados, puede decir hola a su agente y se debería de registrar en la base de datos.
