@@ -12,7 +12,7 @@ Dirigirse a [la consola de Google Cloud](https://console.cloud.google.com/) y cr
 ## Crear Agente en Dialogflow y enlazar con Sheets:
 Dirigirse a [Dialogflow](https://dialogflow.cloud.google.com/) y crear un nuevo agente. Seleccionar el nombre del agente, idioma y zona horaria. Seleccionar el proyecto que acaba de crear en Google Cloud (en el paso anterior). 
 
-![Image of Dialogflow New Agent]()
+![Image of Dialogflow New Agent](Images/1.png)
 
 Dirigirse al siguiente [Sheets]() . Dar click en *Archivo/Hacer una copia* y nombrar la copia para que pertenezca al proyecto actual El nombre **no** tiene que ser el mismo en todos los proyectos.
 
@@ -22,13 +22,13 @@ Dar click en “CONFIGURE CONSENT SCREEN” (Configurar página de consentimient
 
 Regresar a “Credentials/+CREATE CREDENTIALS” y seleccionar “Web application” (Aplicación web), colocar un nombre y en “Authorized JavaScript origins” (Orígenes de JavaScript autorizados) pegar este link: https://script.google.com. Ahora en “Authorized redirect URIs” (URL de redirección autorizados) copiar el link que aparece dentro del sheets, a un lado de “Then go to this site to grant authorization”. 
 
-![Image of the Sheets link]()
+![Image of the Sheets link](Images/2.png)
 
 Dar click en “CREATE” (Crear) y generará un “client ID” y un “client secret” para el proyecto. Ahora nos dirigimos al Sheets, en la sección de Herramientas/Editor de secuencias de comandos. Buscar la función **storeGoogleCredentials()** y reemplazar el “client_id” y “client_secret” por los que se generaron anteriormente. 
 
 Ahora en la parte superior del script, ubicar donde se señala el nombre actual del proyecto y copiarlo. Ahora ir a *Editar/Buscar* y reemplazar. En buscar pegamos el nombre actual del proyecto y en reemplazar pegamos el “Project ID” que se encuentra en Dialogflow 
 
-![Image of Project ID from Dialogflow]()
+![Image of Project ID from Dialogflow](Images/3.png)
 
 Seleccionar reemplazar todos.
 
@@ -40,7 +40,7 @@ Descargar el archivo de este Github y guardarlo en el escritorio. Abrir el comma
 cd desktop/test
 ```
 
-![Image of the path to Test]()
+![Image of the path to Test](Images/4.png)
 
 Una vez en la carpeta, ingresar el siguiente comando:
 ```bash
@@ -55,7 +55,7 @@ firebase login
 
 e ingresa con la misma cuenta que utilizaste para crear el proyecto. 
 
-![Firebase CLI Login Succesful]()
+![Firebase CLI Login Succesful](Images/5.png)
 
 Ahora ejecutar el comando
 
@@ -65,12 +65,12 @@ firebase init
 
 Seleccionar solamente la opción de Functions. Dar enter en “Use an existing Project” y seleccionar el proyecto deseado. Escoger Javascript y dar si a ESlint. Instalar las dependencias en el momento.
 
-![Firebase parte 1]()
-![Firebase parte 2]()
+![Firebase parte 1](Images/6.png)
+![Firebase parte 2](Images/7.png)
 
 Ahora vamos a ir a [la consola de firebase](https://console.firebase.google.com/) y seleccionamos el mismo proyecto. Ubicamos el menú del lado izquierdo y seleccionamos Database. Creamos una Realtime Database y usamos “Start in locked mode”. A continuación nuestra base de datos se va a construir y aparecerá algo como lo siguiente:  
 
-![Imagen de la base de datos]()
+![Imagen de la base de datos](Images/8.png)
 
 Regresando a su escritorio, abra la carpeta donde se guardó el proyecto. Ahí va a haber una carpeta llamada “functions”, ingrese a la carpeta y eliminará los siguientes archivos: *index.js, package.json* y *package-lock.json*. 
   
@@ -78,8 +78,8 @@ Ahora los va a sustituir por los que se encuentran en este repositorio. Ahora ha
 
 Ubicamos la siguiente sección del archivo y vamos a ingresar el link que aparece en la base de datos donde está entre paréntesis “(url de la base de datos)”
 
-![Imagen del block de notas]()
-![Imagen del link de la base de datos]()
+![Imagen del block de notas](Images/9.png)
+![Imagen del link de la base de datos](Images/10.png)
 
 * Hay que tener cuidado con lo siguiente: 
   * •	El link debe de empezar con ws:// en lugar de https://
@@ -111,16 +111,16 @@ firebase deploy
 
 Nos deberá de aparecer un mensaje tipo “Deploy complete!” y dentro del texto que aparece en el comando, debe de haber una línea que indique el url de nuestra función. Vamos a guardar este URL.
 
-![Imagen con URL de la función]()
+![Imagen con URL de la función](Images/11.png)
 
 Ahora vamos Dialogflow y seleccionamos la sección de “Fulfillment” en el menú del lado izquierdo. Ahora seleccionamos Webhook ENABLED y pegamos el URL de la función en el espacio URL y guardamos los cambios.
 
-![Imagen del Fulfillment de Dialogflow]()
+![Imagen del Fulfillment de Dialogflow](Images/12.png)
 
 ### Prueba
 
 El siguiente paso es ingresar a Dialogflow y activar el Webhook call para los intents que se crean por Default. 
 
-![Imagen de la prueba]()
+![Imagen de la prueba](Images/13.png)
 
 Una vez activados, puede decir hola a su agente y se debería de registrar en la base de datos.
