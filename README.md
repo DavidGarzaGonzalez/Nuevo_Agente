@@ -7,13 +7,13 @@ Este proyecto es un tutorial para construir un Agente de Dialogflow, el cual se 
 Se requiere utilizar la misma cuenta de Google para todas las aplicaciones aquí mencionadas (Cloud, Dialogflow, Firebase y Sheets). Debe de tener instalado Node.js y NPM. Ingresar a este [link](https://www.npmjs.com/get-npm). Se recomienda mantener abierta las pestañas que de Cloud, Dialogflow y Firebase debido a que con frecuencia nos movemos entre estas aplicaciones. 
 
 ## Crear Agente en Dialogflow y enlazar con Sheets:
-Dirigirse a [Dialogflow](https://dialogflow.cloud.google.com/) y crear un nuevo agente. Seleccionar el nombre del agente, idioma y zona horaria. Seleccionar el proyecto que acaba de crear en Google Cloud (en el paso anterior). 
+Dirigirse a [Dialogflow](https://dialogflow.cloud.google.com/) y crear un nuevo agente. Seleccionar el nombre del agente, idioma y zona horaria.
 
 ![Image of Dialogflow New Agent](Images/1.png)
 
-Dirigirse al siguiente [Sheets]() . Dar click en *Archivo/Hacer una copia* y nombrar la copia para que pertenezca al proyecto actual El nombre **no** tiene que ser el mismo en todos los proyectos.
+Dirigirse al siguiente [Sheets](https://docs.google.com/spreadsheets/d/1xltKVP4UKnC663VLhtHpl-2U4-wLMMrEmf3iJR5O5KU/edit?usp=sharing). Dar click en *Archivo/Hacer una copia* y nombrar la copia para que pertenezca al proyecto actual. El nombre **no** tiene que ser el mismo en todas las plataformas, pero debemos de utilizar la misma cuenta de Google.
 
-Ahora vamos a [la consola de Google Cloud](https://console.cloud.google.com/) y seleccionamos la pestaña de “API & SERVICES” (APIS & SERVICIOS). Ahora dirigirse a “Credentials” (Credenciales), dar click en “+CREATE CREDENTIALS” (+CREAR CREDENCIALES) y seleccionamos “OAuth client ID” (ID de cliente de OAuth).
+Ahora vamos a [la consola de Google Cloud](https://console.cloud.google.com/). Buscamos el proyecto que se creó al hacer el agente en Dialogflow. Seleccionamos la pestaña de “API & SERVICES” (APIS & SERVICIOS). Ahora dirigirse a “Credentials” (Credenciales), dar click en “+CREATE CREDENTIALS” (+CREAR CREDENCIALES) y seleccionamos “OAuth client ID” (ID de cliente de OAuth).
 
 Dar click en “CONFIGURE CONSENT SCREEN” (Configurar página de consentimiento) y seleccionar “External” (Exterior). Elegir un nombre para el proyecto y un mail para recuperación. 
 
